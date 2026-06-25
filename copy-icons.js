@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const srcPath = path.join(process.cwd(), 'src', 'assets', 'images', 'strayzil_icon_1782367941766.jpg');
+const srcPath = path.join(process.cwd(), 'src', 'assets', 'images', 'strayzil_base_icon_1782369717878.jpg');
 const publicDir = path.join(process.cwd(), 'public');
 
 if (!fs.existsSync(publicDir)) {

@@ -1,20 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <!-- Background -->
-  <rect width="512" height="512" rx="96" fill="#070B19" />
-  <rect x="24" y="24" width="464" height="464" rx="72" fill="#0C1630" stroke="#00d2ff" stroke-width="8" stroke-opacity="0.4" />
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="100%" stop-color="#0b1e3f" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0066ff" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
   
-  <!-- Minecraft Inner Border (Golden/Yellow 3D Blocky) -->
-  <rect x="40" y="40" width="432" height="432" rx="56" fill="none" stroke="#eab308" stroke-width="16" stroke-dasharray="32 16" />
+  <!-- Background with slight rounded corners -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
   
-  <!-- "SZ" text in center styled like blocky Minecraft font -->
-  <g transform="translate(256, 266)">
-    <!-- 3D Shadow -->
-    <text x="6" y="6" font-family="monospace, Courier, sans-serif" font-size="200" font-weight="900" text-anchor="middle" dominant-baseline="middle" fill="#78350f" letter-spacing="-5">SZ</text>
-    <!-- Main Text -->
-    <text x="0" y="0" font-family="monospace, Courier, sans-serif" font-size="200" font-weight="900" text-anchor="middle" dominant-baseline="middle" fill="#facc15" letter-spacing="-5">SZ</text>
+  <!-- Subtle glowing futuristic grid lines -->
+  <path d="M 0,128 L 512,128 M 0,256 L 512,256 M 0,384 L 512,384 M 128,0 L 128,512 M 256,0 L 256,512 M 384,0 L 384,512" stroke="#1e293b" stroke-width="2" stroke-opacity="0.5" />
+  
+  <!-- Neon Inner Frame -->
+  <rect x="24" y="24" width="464" height="464" rx="88" fill="none" stroke="url(#glowGrad)" stroke-width="6" />
+  <rect x="36" y="36" width="440" height="440" rx="76" fill="none" stroke="#00ffff" stroke-width="2" stroke-opacity="0.3" />
+  
+  <!-- "SB" text in center styled like modern futuristic blocky font -->
+  <g transform="translate(256, 260)">
+    <!-- Sleek Glow Shadow -->
+    <text x="0" y="4" font-family="'Courier New', Courier, monospace" font-size="220" font-weight="900" text-anchor="middle" dominant-baseline="middle" fill="#002244" letter-spacing="-8" opacity="0.6">SB</text>
+    <text x="0" y="0" font-family="'Courier New', Courier, monospace" font-size="220" font-weight="900" text-anchor="middle" dominant-baseline="middle" fill="url(#textGrad)" letter-spacing="-8">SB</text>
   </g>
   
-  <!-- Accent Sparkles -->
-  <polygon points="120,120 130,100 140,120 160,130 140,140 130,160 120,140 100,130" fill="#38bdf8" />
-  <polygon points="380,360 388,344 396,360 412,368 396,376 388,392 380,376 364,368" fill="#38bdf8" />
+  <!-- Pixelated Tech Accents -->
+  <rect x="96" y="96" width="16" height="16" fill="#38bdf8" opacity="0.8" />
+  <rect x="112" y="112" width="16" height="16" fill="#0284c7" opacity="0.6" />
+  <rect x="384" y="384" width="24" height="24" fill="#00d2ff" opacity="0.8" />
+  <rect x="360" y="408" width="16" height="16" fill="#0284c7" opacity="0.5" />
+  
+  <!-- Glowing stars/sparkles -->
+  <polygon points="400,100 405,115 420,120 405,125 400,140 395,125 380,120 395,115" fill="#38bdf8" />
+  <polygon points="112,384 116,394 126,398 116,402 112,412 108,402 98,398 108,394" fill="#00ffff" />
 </svg>
