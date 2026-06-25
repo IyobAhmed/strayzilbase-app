@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --theme-dark: #020617;
+  --theme-deep: #0f172a;
+  --theme-blue: #1e293b;
+  --theme-light: #0ea5e9;
+  --theme-cyan: #38bdf8;
+  --theme-white: #ffffff;
+  --theme-gray: #94a3b8;
+  --theme-glass: rgba(15, 23, 42, 0.8);
+  --theme-border: rgba(56, 189, 248, 0.25);
+  --scrollbar-thumb: #1e293b;
+  --scrollbar-track: #020617;
+}
+
+html.theme-slate {
+  --theme-dark: #020617;
+  --theme-deep: #0f172a;
+  --theme-blue: #1e293b;
+  --theme-light: #0ea5e9;
+  --theme-cyan: #38bdf8;
+  --theme-white: #ffffff;
+  --theme-gray: #94a3b8;
+  --theme-glass: rgba(15, 23, 42, 0.8);
+  --theme-border: rgba(56, 189, 248, 0.25);
+  --scrollbar-thumb: #1e293b;
+  --scrollbar-track: #020617;
+}
+
+html.theme-deepnight {
+  --theme-dark: #050110;
+  --theme-deep: #0d0221;
+  --theme-blue: #1e0947;
+  --theme-light: #8b5cf6;
+  --theme-cyan: #c084fc;
+  --theme-white: #ffffff;
+  --theme-gray: #a78bfa;
+  --theme-glass: rgba(13, 2, 33, 0.85);
+  --theme-border: rgba(168, 85, 247, 0.35);
+  --scrollbar-thumb: #1e0947;
+  --scrollbar-track: #050110;
+}
+
+html.theme-light {
+  --theme-dark: #f8fafc;
+  --theme-deep: #f1f5f9;
+  --theme-blue: #e2e8f0;
+  --theme-light: #0284c7;
+  --theme-cyan: #0369a1;
+  --theme-white: #0f172a;
+  --theme-gray: #475569;
+  --theme-glass: rgba(241, 245, 249, 0.85);
+  --theme-border: rgba(14, 165, 233, 0.25);
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-track: #f8fafc;
+}
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Dynamic Voxel theme variables */
+  --color-minecraft-dark: var(--theme-dark);
+  --color-minecraft-deep: var(--theme-deep);
+  --color-minecraft-blue: var(--theme-blue);
+  --color-minecraft-light: var(--theme-light);
+  --color-minecraft-cyan: var(--theme-cyan);
+  --color-minecraft-white: var(--theme-white);
+  --color-minecraft-gray: var(--theme-gray);
+  --color-minecraft-glass: var(--theme-glass);
+  --color-minecraft-border: var(--theme-border);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-cyan);
+}
+
+/* Glassmorphism Classes */
+.mc-glass {
+  background-color: var(--theme-glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--theme-border);
+}
+
+.mc-glass-cyan {
+  background-color: var(--theme-glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--theme-border);
+  box-shadow: 0 8px 32px rgba(56, 189, 248, 0.08);
+}
+
+.mc-border-blocky {
+  box-shadow: inset -1px -1px 0px 0px rgba(0, 0, 0, 0.3),
+              inset 1px 1px 0px 0px rgba(255, 255, 255, 0.05);
+}
+
+/* Animations and Base settings */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--theme-dark);
+  color: var(--theme-white);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Higher Specificity Global Theme Interceptors */
+
+/* DEEP NIGHT NEON PURPLE OVERRIDES */
+html.theme-deepnight {
+  .text-sky-400, .text-sky-300, .text-cyan-400, .text-cyan-300, .text-minecraft-cyan {
+    color: #c084fc !important;
+  }
+  .bg-sky-500, .bg-cyan-500, .bg-minecraft-cyan {
+    background-color: #8b5cf6 !important;
+  }
+  .bg-sky-500\/10, .bg-cyan-500\/10 {
+    background-color: rgba(139, 92, 246, 0.15) !important;
+  }
+  .border-sky-500\/30, .border-cyan-500\/30, .border-sky-500\/10 {
+    border-color: rgba(168, 85, 247, 0.35) !important;
+  }
+  .focus\:border-sky-500\/50:focus, .focus\:border-cyan-500\/50:focus {
+    border-color: rgba(168, 85, 247, 0.6) !important;
+  }
+  .hover\:border-sky-500\/30:hover, .hover\:border-cyan-500\/30:hover {
+    border-color: rgba(168, 85, 247, 0.45) !important;
+  }
+}
+
+/* LIGHT MODE OVERRIDES */
+html.theme-light {
+  /* Text changes */
+  .text-white, .text-white\/90, .text-white\/80 {
+    color: #0f172a !important;
+  }
+  .text-white\/75, .text-white\/70, .text-white\/60, .text-slate-300, .text-slate-400, .text-slate-200, .text-slate-100 {
+    color: #334155 !important;
+  }
+  .text-white\/50, .text-white\/40, .text-white\/30, .text-white\/20, .text-white\/10, .text-slate-500, .text-slate-600 {
+    color: #64748b !important;
+  }
+  
+  /* Background changes */
+  .bg-slate-950, .bg-slate-900, .bg-slate-900\/55, .bg-\[\#050813\], .bg-\[\#020617\], .bg-slate-900\/80, .bg-\[\#020617\]\/80 {
+    background-color: #f1f5f9 !important;
+  }
+  .bg-slate-900\/40, .bg-\[\#020617\]\/90, .bg-slate-900\/60, .bg-\[\#020617\]\/60, .bg-slate-950\/40, .bg-slate-950\/55 {
+    background-color: rgba(226, 232, 240, 0.8) !important;
+  }
+  .bg-\[\#070B19\], .bg-\[\#070b19\], .bg-\[\#0d1630\], .bg-minecraft-dark, .bg-\[\#050813\] {
+    background-color: #f8fafc !important;
+  }
+  .bg-slate-900\/20, .bg-slate-900\/10, .bg-white\/5, .bg-black\/10, .bg-black\/20 {
+    background-color: rgba(15, 23, 42, 0.05) !important;
+  }
+  .bg-\[\#03000a\], .bg-\[\#020617\] {
+    background-color: #f8fafc !important;
+  }
+  
+  /* Inputs, Select, Textarea fields readability */
+  input, select, textarea {
+    color: #0f172a !important;
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+  option {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+  
+  /* Borders */
+  .border-white\/5, .border-white\/10, .border-white\/20, .border-white\/30, .border-slate-800, .border-slate-700 {
+    border-color: #cbd5e1 !important;
+  }
+  
+  /* SVGs & icons */
+  .text-sky-400, .text-sky-300, .text-cyan-400, .text-cyan-300 {
+    color: #0284c7 !important;
+  }
+  .bg-sky-500, .bg-cyan-500 {
+    background-color: #0284c7 !important;
+  }
+  
+  /* Glass card overrides */
+  .mc-glass {
+    background-color: rgba(241, 245, 249, 0.8) !important;
+    border-color: rgba(14, 165, 233, 0.25) !important;
+  }
+}
+
+/* Simple fade-in animation helper */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
