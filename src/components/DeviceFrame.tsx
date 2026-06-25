@@ -1,28 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Wifi, Battery, Signal, Smartphone } from "lucide-react";
+import React from "react";
+import { Smartphone } from "lucide-react";
 
 interface DeviceFrameProps {
   children: React.ReactNode;
 }
 
 export default function DeviceFrame({ children }: DeviceFrameProps) {
-  const [time, setTime] = useState("");
-
-  useEffect(() => {
-    const updateClock = () => {
-      const now = new Date();
-      let hours = now.getHours();
-      const minutes = String(now.getMinutes()).padStart(2, "0");
-      const ampm = hours >= 12 ? "PM" : "AM";
-      hours = hours % 12;
-      hours = hours ? hours : 12; // the hour '0' should be '12'
-      setTime(`${hours}:${minutes} ${ampm}`);
-    };
-    updateClock();
-    const interval = setInterval(updateClock, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="min-h-screen bg-minecraft-dark flex flex-col items-center justify-center p-0 md:p-6 select-none font-sans overflow-x-hidden transition-colors duration-300">
       {/* Decorative Minecraft-inspired background particles */}
@@ -41,22 +24,8 @@ export default function DeviceFrame({ children }: DeviceFrameProps) {
           <div className="w-2.5 h-2.5 bg-minecraft-dark rounded-full border border-slate-700"></div>
         </div>
 
-        {/* Dynamic Status Bar (Android-first) */}
-        <div className="w-full h-11 px-6 bg-minecraft-dark/80 backdrop-blur-md flex items-center justify-between text-xs font-medium text-white/90 select-none z-40 border-b border-white/5 md:pt-3">
-          <span className="font-semibold text-[13px] tracking-tight">{time || "12:00 PM"}</span>
-          <div className="flex items-center gap-1.5">
-            <Signal className="w-3.5 h-3.5 opacity-90" />
-            <Wifi className="w-3.5 h-3.5 opacity-90" />
-            <span className="text-[10px] font-bold mr-0.5">LTE</span>
-            <div className="flex items-center gap-0.5 bg-white/10 px-1 py-0.5 rounded border border-white/10">
-              <span className="text-[9px] scale-90">88%</span>
-              <Battery className="w-3.5 h-3.5 text-minecraft-cyan" />
-            </div>
-          </div>
-        </div>
-
         {/* Content Viewport */}
-        <div className="flex-1 w-full flex flex-col overflow-hidden relative bg-minecraft-dark">
+        <div className="flex-1 w-full flex flex-col overflow-hidden relative bg-minecraft-dark pt-0">
           {children}
         </div>
 

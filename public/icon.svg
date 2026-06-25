@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#070B19" />
+  <rect x="24" y="24" width="464" height="464" rx="72" fill="#0C1630" stroke="#00d2ff" stroke-width="8" stroke-opacity="0.4" />
+  
+  <!-- Minecraft Inner Border (Golden/Yellow 3D Blocky) -->
+  <rect x="40" y="40" width="432" height="432" rx="56" fill="none" stroke="#eab308" stroke-width="16" stroke-dasharray="32 16" />
+  
+  <!-- "SZ" text in center styled like blocky Minecraft font -->
+  <g transform="translate(256, 266)">
+    <!-- 3D Shadow -->
+    <text x="6" y="6" font-family="monospace, Courier, sans-serif" font-size="200" font-weight="900" text-anchor="middle" dominant-baseline="middle" fill="#78350f" letter-spacing="-5">SZ</text>
+    <!-- Main Text -->
+    <text x="0" y="0" font-family="monospace, Courier, sans-serif" font-size="200" font-weight="900" text-anchor="middle" dominant-baseline="middle" fill="#facc15" letter-spacing="-5">SZ</text>
+  </g>
+  
+  <!-- Accent Sparkles -->
+  <polygon points="120,120 130,100 140,120 160,130 140,140 130,160 120,140 100,130" fill="#38bdf8" />
+  <polygon points="380,360 388,344 396,360 412,368 396,376 388,392 380,376 364,368" fill="#38bdf8" />
+</svg>

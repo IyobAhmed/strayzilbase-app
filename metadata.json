@@ -1,6 +1,6 @@
 {
   "name": "StrayzilBase",
-  "description": "Minecraft-inspired, modern blocky Android-first community platform.",
+  "description": "Minecraft community platform built by Strayzil",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
